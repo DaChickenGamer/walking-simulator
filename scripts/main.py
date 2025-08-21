@@ -1,9 +1,8 @@
 from direct.actor.Actor import Actor
 from ursina import *
+from ursina.prefabs.conversation import Conversation
 from ursina.prefabs.first_person_controller import FirstPersonController
 
-# TODO Implement a dialog system
-# TODO Make a textbox appear for the npcs text with text options that you can click mouse has to be unlocked
 # TODO Add a character model to interact with
 
 app = Ursina()
@@ -89,6 +88,18 @@ def player_respawn():
 
 respawn_button.on_click = player_respawn
 
+test_convo = Conversation()
+test_convo.enabled = False
+
+convo = dedent('''
+    On skibidi this is so sigma
+    Oi oi oi baka what do you think?
+        * On god this is so sigma
+            Wow I can't believe you picked this
+        * What are you talking about?
+            Oi oi oi you are not a nonchalant sigma
+''')
+
 def update():
     global doing_walking_animation
     global is_jumping
@@ -114,15 +125,20 @@ def update():
         actor.stop()
         actor.play("Idle_Loop")
 
-    if distance(player.position, random_cube.position) < 2:
+    if distance(player.position, random_cube.position) < 2 and not is_interacting:
         interact_text.enabled = True
     else:
         interact_text.enabled = False
 
     if interact_text.enabled and held_keys['e'] and not is_interacting:
         is_interacting = True
-        random_cube.color = color.red
-        invoke(reset_cube_color, delay=.3)
+        mouse.locked = False
+        test_convo.enabled = True
+        test_convo.start_conversation(convo)
+    if is_interacting and not test_convo.enabled:
+        is_interacting = False
+        mouse.locked = True
+        test_convo.enabled = False
 
     if player.position.y_getter() < -10:
         player_die()
