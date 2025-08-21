@@ -2,6 +2,10 @@ from direct.actor.Actor import Actor
 from ursina import *
 from ursina.prefabs.first_person_controller import FirstPersonController
 
+# TODO Implement a dialog system
+# TODO Make a textbox appear for the npcs text with text options that you can click mouse has to be unlocked
+# TODO Add a character model to interact with
+
 app = Ursina()
 
 window.title = "Walking Simulator"
@@ -29,7 +33,7 @@ actor.setScale(1)
 actor.setColor(color.peach)
 actor.setHpr(180, 0, 0)
 
-RandomCube = Entity(
+random_cube = Entity(
     model="cube",
     position=(5,1,5),
     collider="box"
@@ -37,52 +41,90 @@ RandomCube = Entity(
 
 Sky()
 
-interactText = Text(
+interact_text = Text(
     text="E To Interact",
     origin=(0,-15),
 )
 
-interactText.create_background()
+interact_text.create_background()
 #interactText.enabled = False
 
+death_text = Text(
+    text="You Died",
+    origin=(0,0),
+)
 
-doingWalkingAnimation = False
-isJumping = False
+death_text.create_background()
+death_text.enabled = False
+
+respawn_button = Button(
+    text="Respawn",
+    scale=(.15,.07),
+    origin=(0,1.5),
+)
+
+respawn_button.enabled = False
+
+doing_walking_animation = False
+is_jumping = False
+is_interacting = False
 
 def reset_cube_color():
-    RandomCube.color = color.white
+    global is_interacting
+    random_cube.color = color.white
+    is_interacting = False
+
+def player_die():
+    death_text.enabled = True
+    respawn_button.enabled = True
+    player.enabled = False
+    player.cursor.enabled = True
+
+def player_respawn():
+    death_text.enabled = False
+    respawn_button.enabled = False
+    player.enabled = True
+    player.cursor.enabled = False
+    player.position = Vec3(0, 0, 0)
+
+respawn_button.on_click = player_respawn
 
 def update():
-    global doingWalkingAnimation
-    global isJumping
+    global doing_walking_animation
+    global is_jumping
+    global is_interacting
 
     is_moving = held_keys['w'] or held_keys['a'] or held_keys['s'] or held_keys['d']
 
-    if is_moving and not doingWalkingAnimation:
+    if is_moving and not doing_walking_animation:
         actor.loop("Walk_Loop")
-        doingWalkingAnimation = True
+        doing_walking_animation = True
 
-    elif not is_moving and doingWalkingAnimation:
+    elif not is_moving and doing_walking_animation:
         actor.loop("Idle_Loop")
-        doingWalkingAnimation = False
+        doing_walking_animation = False
 
     if held_keys['space']:
-        isJumping = True
+        is_jumping = True
         actor.stop()
         actor.play("Jump_Loop")
 
-    if isJumping and player.grounded:
-        isJumping = False
+    if is_jumping and player.grounded:
+        is_jumping = False
         actor.stop()
         actor.play("Idle_Loop")
 
-    if distance(player.position, RandomCube.position) < 2:
-        interactText.enabled = True
+    if distance(player.position, random_cube.position) < 2:
+        interact_text.enabled = True
     else:
-        interactText.enabled = False
+        interact_text.enabled = False
 
-    if interactText.enabled and held_keys['e']:
-        RandomCube.color = color.red
-        invoke(reset_cube_color, delay=2)
+    if interact_text.enabled and held_keys['e'] and not is_interacting:
+        is_interacting = True
+        random_cube.color = color.red
+        invoke(reset_cube_color, delay=.3)
+
+    if player.position.y_getter() < -10:
+        player_die()
 
 app.run()
