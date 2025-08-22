@@ -2,6 +2,8 @@ from direct.actor.Actor import Actor
 from ursina import *
 from ursina.prefabs.conversation import Conversation
 from ursina.prefabs.first_person_controller import FirstPersonController
+import json
+import os
 
 # TODO Add a character model to interact with
 
@@ -46,7 +48,6 @@ interact_text = Text(
 )
 
 interact_text.create_background()
-#interactText.enabled = False
 
 death_text = Text(
     text="You Died",
@@ -86,6 +87,27 @@ def player_respawn():
     player.cursor.enabled = False
     player.position = Vec3(0, 0, 0)
 
+hasSaveFile = os.path.exists("../save_file.json")
+
+save_data = {
+    "player_position": [0, 0, 0]
+}
+
+if hasSaveFile:
+    with open("../save_file.json", "r") as f:
+        data = json.load(f)
+
+        player.position = Vec3(data["player_position"][0], data["player_position"][1], data["player_position"][2])
+else:
+    with open('../save_file.json', 'w') as file:
+        json.dump(save_data, file)
+
+def save_game():
+    with open("../save_file.json", "w") as f:
+        save_data["player_position"] = list(player.position)
+
+        json.dump(save_data, f)
+
 respawn_button.on_click = player_respawn
 
 test_convo = Conversation()
@@ -104,6 +126,8 @@ def update():
     global doing_walking_animation
     global is_jumping
     global is_interacting
+
+    invoke(save_game, delay=10)
 
     is_moving = held_keys['w'] or held_keys['a'] or held_keys['s'] or held_keys['d']
 
