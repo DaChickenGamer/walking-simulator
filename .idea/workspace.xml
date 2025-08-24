@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0203fb52-7786-4824-be41-7a8507066e42" name="Changes" comment="Basic Dialogue System">
+    <list default="true" id="0203fb52-7786-4824-be41-7a8507066e42" name="Changes" comment="Basic Save Data">
+      <change afterPath="$PROJECT_DIR$/assets/sounds/ItemPickup.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/textures/Grass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/textures/WindowGlass.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Player.glb" beforeDir="false" afterPath="$PROJECT_DIR$/assets/models/Player.glb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,28 +50,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.collider.executor&quot;: &quot;Run&quot;,
-    &quot;Python.conversation.executor&quot;: &quot;Run&quot;,
-    &quot;Python.first_person_controller.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.text.executor&quot;: &quot;Run&quot;,
-    &quot;Python.text_field.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tooltip.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/coding/PycharmProjects/walking-simulator/assets&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.collider.executor": "Run",
+    "Python.conversation.executor": "Run",
+    "Python.first_person_controller.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.text.executor": "Run",
+    "Python.text_field.executor": "Run",
+    "Python.tooltip.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/coding/PycharmProjects/walking-simulator/assets/sounds"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\coding\PycharmProjects\walking-simulator\assets\sounds" />
       <recent name="C:\Users\coding\PycharmProjects\walking-simulator\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\coding\PycharmProjects\walking-simulator\assets\models" />
+      <recent name="C:\Users\coding\PycharmProjects\walking-simulator\assets\textures" />
       <recent name="C:\Users\coding\PycharmProjects\walking-simulator\scripts" />
     </key>
   </component>
@@ -118,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755811646229</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Basic Save Data">
+      <option name="closed" value="true" />
+      <created>1755834973444</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1755834973444</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,7 +151,8 @@
     <MESSAGE value="Basic walking, jumping, and interacting" />
     <MESSAGE value="Renamed Variables &amp; Added Death" />
     <MESSAGE value="Basic Dialogue System" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic Dialogue System" />
+    <MESSAGE value="Basic Save Data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic Save Data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

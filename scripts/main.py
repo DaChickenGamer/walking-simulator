@@ -15,7 +15,13 @@ window.fullscreen = False
 window.exit_button.enabled = False
 window.fps_counter.enabled = True
 
-ground = Entity(model="plane", collider="box", scale=64, color=color.blue)
+ground = Entity(
+    model="plane",
+    collider="box",
+    scale=64,
+    #color=color.blue,
+    texture="../assets/textures/Grass.png",
+    texture_scale=(16,16))
 
 player = FirstPersonController(
     speed=8,
@@ -28,7 +34,7 @@ player.camera_pivot.y = 3
 
 player.cursor.enabled = False
 
-actor = Actor("../assets/Player.glb")
+actor = Actor("../assets/models/Player.glb")
 actor.reparent_to(player)
 actor.setScale(1)
 actor.setColor(color.peach)
@@ -37,7 +43,8 @@ actor.setHpr(180, 0, 0)
 random_cube = Entity(
     model="cube",
     position=(5,1,5),
-    collider="box"
+    collider="box",
+    texture="../assets/textures/WindowGlass.png"
 )
 
 Sky()
@@ -156,6 +163,7 @@ def update():
 
     if interact_text.enabled and held_keys['e'] and not is_interacting:
         is_interacting = True
+        Audio("../assets/sounds/ItemPickup.wav").play()
         mouse.locked = False
         test_convo.enabled = True
         test_convo.start_conversation(convo)
