@@ -4,18 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0203fb52-7786-4824-be41-7a8507066e42" name="Changes" comment="Basic Save Data">
-      <change afterPath="$PROJECT_DIR$/assets/sounds/ItemPickup.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/textures/Grass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/textures/WindowGlass.png" afterDir="false" />
+    <list default="true" id="0203fb52-7786-4824-be41-7a8507066e42" name="Changes" comment="Removed Save File from version control">
+      <change afterPath="$PROJECT_DIR$/scripts/dialogue/dialogues/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/dialogue/manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/interaction/handlers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/interaction/manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/player_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/save_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/world_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Player.glb" beforeDir="false" afterPath="$PROJECT_DIR$/assets/models/Player.glb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,10 +63,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.Run.executor": "Run",
     "Python.collider.executor": "Run",
     "Python.conversation.executor": "Run",
     "Python.first_person_controller.executor": "Run",
     "Python.main.executor": "Run",
+    "Python.save.executor": "Run",
+    "Python.sky.executor": "Run",
     "Python.text.executor": "Run",
     "Python.text_field.executor": "Run",
     "Python.tooltip.executor": "Run",
@@ -64,19 +77,48 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/coding/PycharmProjects/walking-simulator/assets/sounds"
+    "last_opened_file_path": "C:/Users/coding/PycharmProjects/walking-simulator/assets/models"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\coding\PycharmProjects\walking-simulator\assets\models" />
+      <recent name="C:\Users\coding\PycharmProjects\walking-simulator\assets\textures" />
       <recent name="C:\Users\coding\PycharmProjects\walking-simulator\assets\sounds" />
       <recent name="C:\Users\coding\PycharmProjects\walking-simulator\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\coding\PycharmProjects\walking-simulator\assets\models" />
+      <recent name="C:\Users\coding\PycharmProjects\walking-simulator\scripts\dialogue" />
+      <recent name="C:\Users\coding\PycharmProjects\walking-simulator\scripts\manager" />
+      <recent name="C:\Users\coding\PycharmProjects\walking-simulator\scripts\interaction" />
       <recent name="C:\Users\coding\PycharmProjects\walking-simulator\assets\textures" />
-      <recent name="C:\Users\coding\PycharmProjects\walking-simulator\scripts" />
+      <recent name="C:\Users\coding\PycharmProjects\walking-simulator\assets\models" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Run" type="PythonConfigurationType" factoryName="Python">
+      <module name="walking-simulator" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (walking-simulator)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -133,7 +175,23 @@
       <option name="project" value="LOCAL" />
       <updated>1755834973444</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added Textures &amp; Sounds">
+      <option name="closed" value="true" />
+      <created>1756062146578</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1756062146578</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Removed Save File from version control">
+      <option name="closed" value="true" />
+      <created>1756062387267</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1756062387267</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,17 +210,8 @@
     <MESSAGE value="Renamed Variables &amp; Added Death" />
     <MESSAGE value="Basic Dialogue System" />
     <MESSAGE value="Basic Save Data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic Save Data" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/main.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Added Textures &amp; Sounds" />
+    <MESSAGE value="Removed Save File from version control" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed Save File from version control" />
   </component>
 </project>
