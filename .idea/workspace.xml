@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0203fb52-7786-4824-be41-7a8507066e42" name="Changes" comment="Removed Save File from version control">
-      <change afterPath="$PROJECT_DIR$/scripts/dialogue/dialogues/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/dialogue/manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/interaction/handlers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/interaction/manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/player_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/save_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/world_manager.py" afterDir="false" />
+    <list default="true" id="0203fb52-7786-4824-be41-7a8507066e42" name="Changes" comment="Refactored And Organize main.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/player_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/player_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/save_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/save_manager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756062387267</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Refactored And Organize main.py">
+      <option name="closed" value="true" />
+      <created>1756188164732</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1756188164732</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -212,6 +214,7 @@
     <MESSAGE value="Basic Save Data" />
     <MESSAGE value="Added Textures &amp; Sounds" />
     <MESSAGE value="Removed Save File from version control" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed Save File from version control" />
+    <MESSAGE value="Refactored And Organize main.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored And Organize main.py" />
   </component>
 </project>

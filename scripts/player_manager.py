@@ -53,7 +53,7 @@ class Player:
         return actor
 
     def update(self):
-        invoke(save_game_data, player, delay=10)
+        invoke(save_game_data, player.player_object, delay=10)
 
         is_moving = held_keys['w'] or held_keys['a'] or held_keys['s'] or held_keys['d']
         if is_moving and not self.doing_walking_animation:
